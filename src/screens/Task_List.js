@@ -1,9 +1,8 @@
 import React, { Component } from "react"
 import { StyleSheet, View, Text, ImageBackground, FlatList, TouchableOpacity, Platform } from "react-native"
 import Icon from "react-native-vector-icons/FontAwesome6"
-
 import moment from "moment"
-
+import AddTask from "./Add_Task"
 import hoje_imagem from "../../assets/imgs/today.jpg"
 import common_Styles from "../styles/common_Styles"
 import Task from "../components/Task"
@@ -70,6 +69,7 @@ export default class Task_List extends Component {
         const data_hoje = moment().locale('pt-br').format('ddd, D [de] MMMM')
         return (
             <View style={styles.principal}>
+            <AddTask/>
                 <ImageBackground source={hoje_imagem} style={styles.fundo}>
                     <View style={styles.barra_icone}>
                         <TouchableOpacity onPress={this.alternar_filtro}>
